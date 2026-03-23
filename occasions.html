@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-page-title-key="occasionsTitle">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>المناسبات</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand" aria-label="معرض الهدايا">
+          <div class="logo" aria-hidden="true"></div>
+          <h1 data-i18n="brandTitle">معرض الهدايا</h1>
+        </div>
+
+        <button class="burger" type="button" aria-label="قائمة" aria-controls="siteNav" aria-expanded="false" data-i18n="menuButton">
+          قائمة
+        </button>
+
+        <nav id="siteNav" class="nav" aria-label="التنقل">
+          <a href="index.html" data-nav data-i18n="navHome">الرئيسية</a>
+          <a href="occasions.html" data-nav data-i18n="navOccasions">المناسبات</a>
+          <a href="categories.html" data-nav data-i18n="navCategories">الفئات</a>
+          <a href="about.html" data-nav data-i18n="navAbout">عن الموقع</a>
+        </nav>
+
+        <div class="controls" aria-label="إعدادات العرض">
+          <div class="control" title="تبديل الوضع">
+            <label for="modeToggle" data-i18n="modeNightLabel">الوضع الليلي</label>
+            <span class="toggle">
+              <input type="checkbox" id="modeToggle" />
+              <span class="slider" aria-hidden="true"></span>
+            </span>
+          </div>
+
+          <div class="control langControl" title="اختر اللغة">
+            <label for="langSelect" data-i18n="languageLabel">اللغة</label>
+            <select id="langSelect" aria-label="اختيار اللغة">
+              <option value="ar">العربية</option>
+              <option value="en">English</option>
+            </select>
+          </div>
+
+          <div class="control accentPicker" title="اختيار لون مميز">
+            <label for="accentPicker" data-i18n="accentLabel">لون</label>
+            <input id="accentPicker" type="color" value="#6d5efc" />
+            <div class="swatches" aria-label="ألوان سريعة" data-i18n-aria-label="quickColorsAria">
+              <button type="button" style="--c: #6d5efc" data-color="#6d5efc" aria-pressed="false"></button>
+              <button type="button" style="--c: #ff5aa5" data-color="#ff5aa5" aria-pressed="false"></button>
+              <button type="button" style="--c: #2bd4a6" data-color="#2bd4a6" aria-pressed="false"></button>
+              <button type="button" style="--c: #ffb020" data-color="#ffb020" aria-pressed="false"></button>
+              <button type="button" style="--c: #3b82f6" data-color="#3b82f6" aria-pressed="false"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <div class="hero-grid">
+          <div>
+            <h2 data-i18n="occasionsTitle">كل المناسبات</h2>
+            <p data-i18n="occasionsSub">اختر المناسبة وسيتم عرض الهدايا المناسبة.</p>
+          </div>
+
+          <div class="panel" role="region" aria-label="فلترة الهدايا" data-i18n-aria-label="panelFilterGifts">
+            <div class="filters">
+              <div class="field">
+                <label for="occasionSelect" data-i18n="occasionLabel">المناسبة</label>
+                <select id="occasionSelect" aria-label="اختيار المناسبة">
+                  <option value="all">كل المناسبات</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-title" data-i18n="occasionsTitle">كل المناسبات</div>
+      <div id="occasionsGrid" aria-live="polite"></div>
+
+      <div class="section-title" data-i18n="giftsTitle">الهدايا</div>
+      <div id="giftsGrid" aria-live="polite"></div>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <span data-i18n="footerCopy">© 2026 معرض الهدايا</span>
+        <span data-i18n="footerHintHome">جرّب اختيار لونك والوضع الليلي</span>
+      </div>
+    </footer>
+
+    <script src="assets/i18n.js"></script>
+    <script src="assets/data.js"></script>
+    <script src="assets/theme.js"></script>
+    <script src="assets/gifts.js"></script>
+  </body>
+</html>
+
