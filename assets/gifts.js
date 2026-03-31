@@ -60,8 +60,9 @@
         `Price: ${gift.price}\n` +
         `Description: ${desc}\n` +
         `Details: ${details}\n` +
-        `${t("accentChosen", "en")}: ${accent}\n` +
-        `${t("themeChosen", "en")}: ${themeLabel}\n`;
+        `Name: \n` +
+        `Country: \n` +
+        `Please provide the price for this item.`;
     } else {
       message =
         `مرحباً! أريد شراء: ${giftName}\n` +
@@ -70,8 +71,9 @@
         `السعر: ${gift.price}\n` +
         `الوصف: ${desc}\n` +
         `التفاصيل: ${details}\n` +
-        `${t("accentChosen", "ar")}: ${accent}\n` +
-        `${t("themeChosen", "ar")}: ${themeLabel}\n`;
+        `الاسم: \n` +
+        `البلد: \n` +
+        `من فضلك أرسل السعر لهذا المنتج.`;
     }
 
     const encoded = encodeURIComponent(message);
