@@ -1,202 +1,404 @@
-/* Data for gifts/occasions/categories.
-   To customize WhatsApp, set `whatsAppNumber` (international format, no "+" or spaces). */
+/* Render UI: gifts + occasions + categories + WhatsApp buy links. */
 (function () {
-  window.appData = {
-    whatsAppNumber: "01205646201",
-    occasions: [
-      { id: "wedding", name: { ar: "الزواج", en: "Wedding" } },
-      { id: "engagement", name: { ar: "خطوبة", en: "Engagement" } },
-      { id: "birthday", name: { ar: "عيد ميلاد", en: "Birthday" } },
-      { id: "graduation", name: { ar: "التخرج", en: "Graduation" } },
-      { id: "anniversary", name: { ar: "ذكرى سنوية", en: "Anniversary" } },
-      { id: "new_baby", name: { ar: "قدوم مولود", en: "New Baby" } },
-      { id: "events", name: { ar: "أحداث", en: "Events" } },
-    ],
-    categories: [
-      { id: "flowers", name: { ar: "ورود", en: "Flowers" } },
-      { id: "chocolates", name: { ar: "شوكولاتة", en: "Chocolates" } },
-      { id: "perfume", name: { ar: "عطور", en: "Perfume" } },
-      { id: "jewelry", name: { ar: "إكسسوارات", en: "Jewelry" } },
-      { id: "cards", name: { ar: "كروت تهنئة", en: "Greeting cards" } },
-      { id: "gift_baskets", name: { ar: "سلال هدايا", en: "Gift baskets" } },
-    ],
-    gifts: [
-      {
-        id: "gift6",
-        name: { ar: " عطور للعروسين", en: "Perfume Set for Newlyweds" },
-        occasionId: "wedding",
-        categoryId: "perfume",
-        price: "",
-        color: "#6d5efc",
-        description: {
-          ar: "هدية عطرية راقية مع تغليف فخم ومناسبة للعرسان.",
-          en: "A classy fragrance gift, beautifully wrapped for the occasion.",
-        },
-        details: {
-          ar: "اختيار العطر يعتمد على التوفر والموسم.",
-          en: "Fragrance selection based on availability and season.",
-        },
-      },
-      {
-        id: "gift7",
-        name: { ar: "إكسسوارات فاخرة", en: "Premium Jewelry Accessories" },
-        occasionId: "wedding",
-        categoryId: "jewelry",
-        price: "",
-        color: "#ff5aa5",
-        description: {
-          ar: "إكسسوار أنيق مع بطاقة تهنئة شخصية.",
-          en: "Elegant accessory with a personalized greeting card.",
-        },
-        details: {
-          ar: "يمكن وضع الاسم على البطاقة حسب الطلب.",
-          en: "Name on the card can be added on request.",
-        },
-      },
-      {
-        id: "gift8",
-        name: { ar: "كارت تهنئة فاخر", en: "Luxury Greeting Card" },
-        occasionId: "wedding",
-        categoryId: "cards",
-        price: "",
-        color: "#3b82f6",
-        description: {
-          ar: "كارت تهنئة بجودة عالية وعبارات فخمة.",
-          en: "A premium card with expressive, elegant wording.",
-        },
-        details: {
-          ar: "اللغة والتصميم متغيران حسب الطلب.",
-          en: "Language and design are customizable by request.",
-        },
-      },
-      {
-        id: "gift9",
-        name: { ar: "سلة خطوبة راقية", en: "Elegant Engagement Basket" },
-        occasionId: "engagement",
-        categoryId: "gift_baskets",
-        price: "",
-        color: "#2bd4a6",
-        description: {
-          ar: "سلة هدايا ذات طابع رومانسي مع شوكولاتة ومكسرات.",
-          en: "A romantic gift basket with chocolates and nuts.",
-        },
-        details: {
-          ar: "تضاف عبارة تهنئة مخصصة عند الطلب.",
-          en: "Custom congratulatory message added on request.",
-        },
-      },
-      {
-        id: "gift10",
-        name: { ar: "باقة ورود للخطوبة", en: "Engagement Flowers Bouquet" },
-        occasionId: "engagement",
-        categoryId: "flowers",
-        price: "",
-        color: "#ffb020",
-        description: {
-          ar: "باقة ورد دافئة لأجمل لحظة إعلان الخطوبة.",
-          en: "A warm-tone bouquet for the engagement announcement.",
-        },
-        details: {
-          ar: "تتوفر تعديلات الألوان حسب الطلب.",
-          en: "Color adjustments available by request.",
-        },
-      },
-      {
-        id: "gift11",
-        name: { ar: "علبة شوكولاتة عيد ميلاد", en: "Birthday Chocolates Treat" },
-        occasionId: "birthday",
-        categoryId: "chocolates",
-        price: "",
-        color: "#ff5aa5",
-        description: {
-          ar: "علبة شوكولاتة فاخرة مع بطاقة تهنئة شخصية.",
-          en: "Luxury chocolates box with a personalized greeting.",
-        },
-        details: {
-          ar: "نص البطاقة قابل للتخصيص حسب رغبتك.",
-          en: "Card text can be customized as you prefer.",
-        },
-      },
-      {
-        id: "gift12",
-        name: { ar: "كارت عيد ميلاد سعيد", en: "Happy Birthday Greeting Card" },
-        occasionId: "birthday",
-        categoryId: "cards",
-        price: "",
-        color: "#3b82f6",
-        description: {
-          ar: "كارت بتصميم عصري ورسالة دافئة.",
-          en: "A modern design card with a warm message.",
-        },
-        details: {
-          ar: "اكتب الاسم وتاريخ الميلاد للبطاقة.",
-          en: "Include name and birth date for the card.",
-        },
-      },
-      {
-        id: "gift13",
-        name: { ar: "سلة تخرج مميزة", en: "Graduation Signature Basket" },
-        occasionId: "graduation",
-        categoryId: "gift_baskets",
-        price: "",
-        color: "#6d5efc",
-        description: {
-          ar: "سلة تهنئة بالتخرج مع عبارات تحفيزية وشوكولاتة.",
-          en: "A graduation gift with uplifting messages and chocolates.",
-        },
-        details: {
-          ar: "يمكن إضافة أسماء الخريجين في الرسالة.",
-          en: "Graduates' names can be added in the note.",
-        },
-      },
-      {
-        id: "gift14",
-        name: { ar: "عطر تخرج راقي", en: "Elegant Graduation Perfume" },
-        occasionId: "graduation",
-        categoryId: "perfume",
-        price: "",
-        color: "#2bd4a6",
-        description: {
-          ar: "عطر مع تغليف أنيق لتهنئة الخريج.",
-          en: "Fragrance with elegant packaging for graduation.",
-        },
-        details: {
-          ar: "اختيار الرائحة حسب التوفر المتاح.",
-          en: "Fragrance selection based on availability.",
-        },
-      },
-      {
-        id: "gift22",
-        name: { ar: "سلة ذكرى سنوية", en: "Annual Anniversary Basket" },
-        occasionId: "anniversary",
-        categoryId: "gift_baskets",
-        price: "",
-        color: "#ff5aa5",
-        description: {
-          ar: "سلة رومانسية مع لمسة أنيقة للذكرى.",
-          en: "A romantic basket with an elegant anniversary touch.",
-        },
-        details: {
-          ar: "أضف أسماء الزوجين في الرسالة عبر الواتساب.",
-          en: "Add the couple's names in your WhatsApp message.",
-        },
-      },
-      {
-        id: "gift23",
-        name: { ar: "سلة قدوم مولود", en: "New Baby Basket" },
-        occasionId: "new_baby",
-        categoryId: "gift_baskets",
-        price: "",
-        color: "#3b82f6",
-        description: {
-          ar: "سلة تهنئة بالمولود مع تفاصيل أنيقة.",
-          en: "A newborn celebration basket with elegant details.",
-        },
-        details: {
-          ar: "يتوفر تخصيص الاسم على البطاقة حسب الطلب.",
-          en: "Name customization on card available on request.",
-        },
-      },
-    ],
+  const data = window.appData || { gifts: [], occasions: [], categories: [] };
+  const t = (window.__appT && window.__appT.bind(window)) || function (key) { return key; };
+
+  function lang() {
+    const l = (document.documentElement.getAttribute("lang") || "ar").toLowerCase();
+    return l === "en" ? "en" : "ar";
+  }
+
+  function getAccent() {
+    const v = getComputedStyle(document.documentElement).getPropertyValue("--accent") || "#6d5efc";
+    return v.trim();
+  }
+
+  function getThemeLabel(lng) {
+    const mode = (document.documentElement.getAttribute("data-theme") || "light") === "dark" ? "dark" : "light";
+    if (lng === "en") return mode === "dark" ? t("darkMode", "en") : t("lightMode", "en");
+    return mode === "dark" ? t("darkMode", "ar") : t("lightMode", "ar");
+  }
+
+  function findOccasion(occasionId) {
+    return data.occasions.find((o) => o.id === occasionId);
+  }
+
+  function findCategory(categoryId) {
+    return data.categories.find((c) => c.id === categoryId);
+  }
+
+  function escapeText(s) {
+    return String(s).replace(/[&<>"']/g, (ch) => {
+      const map = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" };
+      return map[ch] || ch;
+    });
+  }
+
+  function buildWhatsAppHref({ gift }) {
+    const lng = lang();
+    const phone = data.whatsAppNumber || "0000000000";
+    const occasion = findOccasion(gift.occasionId);
+    const category = findCategory(gift.categoryId);
+
+    const accent = getAccent();
+    const themeLabel = getThemeLabel(lng);
+
+    const occasionName = occasion ? occasion.name[lng] : "";
+    const categoryName = category ? category.name[lng] : "";
+
+    const giftName = gift.name[lng] || gift.name.ar || gift.name.en || "";
+    const desc = gift.description ? (gift.description[lng] || gift.description.ar || "") : "";
+    const details = gift.details ? (gift.details[lng] || gift.details.ar || "") : "";
+
+    // Message should include all relevant fields.
+    let message = "";
+    if (lng === "en") {
+      message =
+        `Hello! I want to buy: ${giftName}\n` +
+        `Occasion: ${occasionName}\n` +
+        `Category: ${categoryName}\n` +
+        `Price: ${gift.price}\n` +
+        `Description: ${desc}\n` +
+        `Details: ${details}\n` +
+        `Name: \n` +
+        `Country: \n` +
+        `Please provide the price for this item.`;
+    } else {
+      message =
+        `مرحباً! أريد شراء: ${giftName}\n` +
+        `المناسبة: ${occasionName}\n` +
+        `الفئة: ${categoryName}\n` +
+        `السعر: ${gift.price}\n` +
+        `الوصف: ${desc}\n` +
+        `التفاصيل: ${details}\n` +
+        `الاسم: \n` +
+        `البلد: \n` +
+        `من فضلك أرسل السعر لهذا المنتج.`;
+    }
+
+    const encoded = encodeURIComponent(message);
+    return `https://wa.me/${phone}?text=${encoded}`;
+  }
+
+  function createEl(tag, className, text) {
+    const el = document.createElement(tag);
+    if (className) el.className = className;
+    if (text !== undefined) el.textContent = text;
+    return el;
+  }
+
+  const state = {
+    occasionId: "all",
+    categoryId: "all",
   };
+
+  function initOccasionSelect() {
+    const select = document.getElementById("occasionSelect");
+    if (!select || !data.occasions?.length) return;
+
+    // Ensure all options exist (and update their labels per language).
+    const existingValues = new Set(Array.from(select.options || []).map((o) => o.value));
+    const allNeeded = ["all", ...data.occasions.map((o) => o.id)];
+    const missing = allNeeded.some((v) => !existingValues.has(v));
+    if (missing) {
+      select.innerHTML = "";
+      allNeeded.forEach((v) => {
+        const opt = document.createElement("option");
+        opt.value = v;
+        select.appendChild(opt);
+      });
+    }
+
+    const lng = lang();
+    const allOption = Array.from(select.options).find((o) => o.value === "all");
+    if (allOption) allOption.textContent = lng === "en" ? "All occasions" : "كل المناسبات";
+
+    data.occasions.forEach((o) => {
+      const opt = Array.from(select.options).find((s) => s.value === o.id);
+      if (opt) opt.textContent = o.name[lng] || o.name.ar;
+    });
+
+    // Keep current selection if valid.
+    if (select.value && select.value !== "all") {
+      const exists = data.occasions.some((o) => o.id === select.value);
+      state.occasionId = exists ? select.value : "all";
+    }
+
+    if (select.dataset.boundOccasion !== "1") {
+      select.dataset.boundOccasion = "1";
+      select.addEventListener("change", () => {
+        state.occasionId = select.value || "all";
+        renderGifts();
+      });
+    }
+  }
+
+  function initCategorySelect() {
+    const select = document.getElementById("categorySelect");
+    if (!select || !data.categories?.length) return;
+
+    // Ensure all options exist (and update their labels per language).
+    const existingValues = new Set(Array.from(select.options || []).map((o) => o.value));
+    const allNeeded = ["all", ...data.categories.map((c) => c.id)];
+    const missing = allNeeded.some((v) => !existingValues.has(v));
+    if (missing) {
+      select.innerHTML = "";
+      allNeeded.forEach((v) => {
+        const opt = document.createElement("option");
+        opt.value = v;
+        select.appendChild(opt);
+      });
+    }
+
+    const lng = lang();
+    const allOption = Array.from(select.options).find((o) => o.value === "all");
+    if (allOption) allOption.textContent = lng === "en" ? "All categories" : "كل الفئات";
+
+    data.categories.forEach((c) => {
+      const opt = Array.from(select.options).find((s) => s.value === c.id);
+      if (opt) opt.textContent = c.name[lng] || c.name.ar;
+    });
+
+    if (select.value && select.value !== "all") {
+      const exists = data.categories.some((c) => c.id === select.value);
+      state.categoryId = exists ? select.value : "all";
+    }
+
+    if (select.dataset.boundCategory !== "1") {
+      select.dataset.boundCategory = "1";
+      select.addEventListener("change", () => {
+        state.categoryId = select.value || "all";
+        renderGifts();
+      });
+    }
+  }
+
+  function currentGiftsFiltered() {
+    return (data.gifts || []).filter((gift) => {
+      const okOcc = state.occasionId === "all" || gift.occasionId === state.occasionId;
+      const okCat = state.categoryId === "all" || gift.categoryId === state.categoryId;
+      return okOcc && okCat;
+    });
+  }
+
+  function renderGifts() {
+    const grid = document.getElementById("giftsGrid");
+    if (!grid) return;
+
+    const gifts = currentGiftsFiltered();
+    grid.innerHTML = "";
+
+    // If no gifts, show a small message.
+    if (!gifts.length) {
+      const empty = createEl("div", "panel", lang() === "en" ? "No gifts found." : "لا توجد هدايا.");
+      grid.appendChild(empty);
+      return;
+    }
+
+    gifts.forEach((gift) => {
+      const occasion = findOccasion(gift.occasionId);
+      const category = findCategory(gift.categoryId);
+
+      const lng = lang();
+      const title = gift.name?.[lng] || gift.name?.ar || gift.name?.en || "";
+      const desc = gift.description?.[lng] || gift.description?.ar || gift.description?.en || "";
+      const occasionName = occasion?.name?.[lng] || "";
+      const categoryName = category?.name?.[lng] || "";
+
+      const card = document.createElement("div");
+      card.className = "gift-card";
+
+      // Thumbnail.
+      const thumb = document.createElement("div");
+      thumb.className = "gift-thumb";
+      thumb.style.background =
+        `radial-gradient(circle at 30% 20%, rgba(255,255,255,0.65) 0%, transparent 48%),` +
+        `linear-gradient(145deg, color-mix(in oklab, ${gift.color || "#6d5efc"} 40%, #ffffff) 0%, ${gift.color || "#6d5efc"} 70%)`;
+      card.appendChild(thumb);
+
+      const body = document.createElement("div");
+      body.className = "gift-body";
+
+      const h3 = document.createElement("h3");
+      h3.className = "gift-title";
+      h3.textContent = title;
+
+      const meta = document.createElement("div");
+      meta.className = "gift-meta";
+
+      if (occasionName) meta.appendChild(createEl("span", "pill", occasionName));
+      if (categoryName) meta.appendChild(createEl("span", "pill", categoryName));
+
+      const p = document.createElement("p");
+      p.className = "gift-desc";
+      p.textContent = desc;
+
+      const actions = document.createElement("div");
+      actions.className = "gift-actions";
+
+      const price = document.createElement("div");
+      price.className = "price";
+      price.textContent = `${gift.price}`;
+
+      const buy = document.createElement("a");
+      buy.className = "buy-btn";
+      buy.target = "_blank";
+      buy.rel = "noopener noreferrer";
+      buy.href = buildWhatsAppHref({ gift });
+      buy.textContent = t("giftBuy", lng);
+
+      actions.appendChild(price);
+      actions.appendChild(buy);
+
+      body.appendChild(h3);
+      body.appendChild(meta);
+      body.appendChild(p);
+      body.appendChild(actions);
+
+      card.appendChild(body);
+      grid.appendChild(card);
+    });
+  }
+
+  function renderOccasions() {
+    const grid = document.getElementById("occasionsGrid");
+    if (!grid) return;
+    if (!data.occasions?.length) return;
+
+    const lng = lang();
+    grid.innerHTML = "";
+
+    data.occasions.forEach((o) => {
+      const card = document.createElement("div");
+      card.className = "occasion-card";
+      card.setAttribute("role", "button");
+      card.setAttribute("tabindex", "0");
+
+      const title = document.createElement("div");
+      title.className = "card-title";
+      title.textContent = o.name[lng] || o.name.ar;
+
+      const sub = document.createElement("div");
+      sub.className = "card-sub";
+      sub.textContent = lang() === "en" ? "View gifts for this occasion" : "شاهد هدايا هذه المناسبة";
+
+      card.appendChild(title);
+      card.appendChild(sub);
+
+      function applyOccasion() {
+        state.occasionId = o.id;
+        const select = document.getElementById("occasionSelect");
+        if (select) {
+          select.value = o.id;
+          select.dispatchEvent(new Event("change", { bubbles: true }));
+        } else {
+          // If select doesn't exist, still filter gifts grid directly.
+          renderGifts();
+        }
+      }
+
+      // Clicking card applies filter.
+      card.addEventListener("click", applyOccasion);
+      card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          applyOccasion();
+        }
+      });
+
+      grid.appendChild(card);
+    });
+  }
+
+  function renderCategories() {
+    const grid = document.getElementById("categoriesGrid");
+    if (!grid) return;
+    if (!data.categories?.length) return;
+
+    const lng = lang();
+    grid.innerHTML = "";
+
+    data.categories.forEach((c) => {
+      const card = document.createElement("div");
+      card.className = "category-card";
+      card.setAttribute("role", "button");
+      card.setAttribute("tabindex", "0");
+
+      const title = document.createElement("div");
+      title.className = "card-title";
+      title.textContent = c.name[lng] || c.name.ar;
+
+      const sub = document.createElement("div");
+      sub.className = "card-sub";
+      sub.textContent = lang() === "en" ? "View gifts for this category" : "شاهد هدايا هذه الفئة";
+
+      card.appendChild(title);
+      card.appendChild(sub);
+
+      function applyCategory() {
+        state.categoryId = c.id;
+        const select = document.getElementById("categorySelect");
+        if (select) {
+          select.value = c.id;
+          select.dispatchEvent(new Event("change", { bubbles: true }));
+        } else {
+          renderGifts();
+        }
+      }
+
+      card.addEventListener("click", applyCategory);
+      card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          applyCategory();
+        }
+      });
+
+      grid.appendChild(card);
+    });
+  }
+
+  function initFromExistingFilters() {
+    const occSel = document.getElementById("occasionSelect");
+    if (occSel && occSel.value) state.occasionId = occSel.value;
+    const catSel = document.getElementById("categorySelect");
+    if (catSel && catSel.value) state.categoryId = catSel.value;
+  }
+
+  function init() {
+    initFromExistingFilters();
+    initOccasionSelect();
+    initCategorySelect();
+
+    renderOccasions();
+    renderCategories();
+    renderGifts();
+
+    // Dynamic content updates:
+    // - language changes need re-render to update labels in created elements
+    // - theme/accent changes need re-render because WhatsApp message includes them
+    window.addEventListener("app:langchange", () => {
+      initFromExistingFilters();
+      initOccasionSelect();
+      initCategorySelect();
+      renderOccasions();
+      renderCategories();
+      renderGifts();
+    });
+
+    window.addEventListener("app:themechange", () => {
+      renderGifts();
+    });
+
+    window.addEventListener("app:accentchange", () => {
+      renderGifts();
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
 })();
+
