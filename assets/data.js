@@ -2,7 +2,7 @@
    To customize WhatsApp, set `whatsAppNumber` (international format, no "+" or spaces). */
 (function () {
   window.appData = {
-    whatsAppNumber: "01205646201",
+    whatsAppNumber: "201064375585",
     occasions: [
       { id: "wedding", name: { ar: "الزواج", en: "Wedding" } },
       { id: "engagement", name: { ar: "خطوبة", en: "Engagement" } },
