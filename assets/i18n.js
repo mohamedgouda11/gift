@@ -135,7 +135,8 @@
     const langSelect = document.getElementById("langSelect");
     const saved = localStorage.getItem(STORAGE_KEY);
 
-    const lang = saved || (langSelect ? langSelect.value : "ar");
+    // Ensure default is Arabic (for proper Arabic support) unless user explicitly chose English.
+    const lang = saved || "ar";
     if (langSelect) langSelect.value = lang === "en" ? "en" : "ar";
     applyI18n(lang === "en" ? "en" : "ar");
 
