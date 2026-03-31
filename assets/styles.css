@@ -66,13 +66,11 @@ button, input, select{ font: inherit; }
 }
 
 .logo{
-  width: 40px;
-  height: 40px;
-  border-radius: 14px;
-  background: radial-gradient(circle at 30% 20%, color-mix(in oklab, var(--accent) 70%, white) 0%, transparent 45%),
-              linear-gradient(145deg, color-mix(in oklab, var(--accent) 85%, white) 0%, var(--accent) 65%);
-  box-shadow: 0 10px 26px rgba(109, 94, 252, 0.35);
-  border: 1px solid color-mix(in oklab, var(--accent) 60%, transparent);
+  width: auto;
+  height: 50px;
+  max-width: 150px;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .burger{
